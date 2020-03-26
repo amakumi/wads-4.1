@@ -1,0 +1,39 @@
+<body>
+<div class="row vertical-center">
+	<div class="col-md">
+	</div>
+	<div class="col-md-4">
+	  <div class="card">
+		<div class="card-header">
+		  <h1>Welcome</h1>
+		</div>
+
+		<div class="card-body">
+		  <form [formGroup]="loginForm" (ngSubmit)="onClickLogin()">
+			<label for="email">Email</label>
+			<input class="form-control" type="email" formControlName="email" id="email">
+			<label for="password">Password</label>
+			<input class="form-control" type="password" formControlName="password" id="password">
+			<button class="btn btn-primary mt-3" type="submit" [disabled]="!loginForm.valid" >Login or Sign Up</button>
+		  </form>
+		  <div>
+			<a class="txt1" routerLink="/register">
+				<p style="font-family: lato; font: size 15px">
+				New here?
+				</p>
+			</a>
+			<br>
+			<br>
+		</div>
+		  <p class="lead mt-3">
+			or Sign Up using
+		  </p>
+		  <div class="btn btn-primary" (click)="loginService.doGoogleLogin()">Login with Google | <i class='fab fa-google'></i></div>
+		</div>
+	  </div>
+	</div>
+	<div class="col-md">
+	</div>
+	
+</div>
+</body>

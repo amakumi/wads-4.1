@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "marco-wads-exercise4": {
+      "hosting": {
+        "angular": [
+          "marco-wads-exercise4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "marco-wads-exercise4"
+  }
+}
