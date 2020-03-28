@@ -1,5 +1,7 @@
-# Web
+# WADS-Exercise4.1
+## The most recent version of WADS-Exercise4
 
+A revised version from the previous WADS-Exercise4.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
 
 ## Development server
