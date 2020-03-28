@@ -1,19 +1,70 @@
-<p>You are now a member!</p>
-
 <div class="row-md p-3">
-
+<h1>Welcome back</h1>
 </div>
 
 <div class="row" *ngIf="loginService.user$ | async as user">
-    <h1>Hello</h1>
   <div class="col-md-3">
 
   </div>
   <div class="col-md-6">
-    <h1 class="display1 text-center" id="fullname">{{user.name}}</h1>
-    <h2 class="lead text-center" id="shortDesc">{{user.email}}</h2>
+    <h1 class="display1 text-center" id="fullname">{{user.fullName}}</h1>
+    <h2 class="lead text-center" id="shortDesc">{{user.shortDesc}}</h2>
   </div>
   <div class="col-md-3">
 
   </div>
+
 </div>
+<div class="row pt-3" *ngIf="loginService.user$ | async as user">
+  <div class="col-md-4 p-3">
+    <div class="card text-white bg-info animax">
+      <h4 class="card-header">
+        <i class="far fa-address-card"></i> My Info
+      </h4>
+      <div class="card-body">
+        <blockquote class="blockquote">
+        </blockquote>
+        <h5><i class="fa fa-address-book"></i> Contact Me</h5>
+        <p><i class="fas fa-phone-alt"></i> {{user.number}}<br>
+          <i class="far fa-envelope"></i> {{user.email}}</p>
+      </div>
+      <div class="card-footer">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-12 p-3">
+        <div class="card animax">
+          <div class="card-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 p-3">
+        <div class="card animax">
+          <h5 class="card-header">
+            <i class="fas fa-gem"></i> a little empty here
+          </h5>
+          
+          <div class="card-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 p-3">
+        <div class="card animax">
+          <h5 class="card-header">
+            <i class="fas fa-wrench"></i> ..
+          </h5>
+        
+          <div class="card-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="btn btn-primary" (click)="buttonPress()">Whats this?</button>

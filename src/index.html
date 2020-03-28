@@ -1,42 +1,40 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
-  <title>WADS #4 :: Webpage</title>
+  <title>Welcome</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
-
 <body>
   <app-root></app-root>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+
   <!-- TODO: Add SDKs for Firebase products that you want to use
        https://firebase.google.com/docs/web/setup#available-libraries -->
   <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
 
-
   <script>
+    
+    // Your web app's Firebase configuration
+    var firebaseConfig =
+    {
+      apiKey: "AIzaSyAKX8OCZ0NgiADg5WfzzmCFmbwsSAlVY1k",
+      authDomain: "marco-wads-exercise4.firebaseapp.com",
+      databaseURL: "https://marco-wads-exercise4.firebaseio.com",
+      projectId: "marco-wads-exercise4",
+      storageBucket: "marco-wads-exercise4.appspot.com",
+      messagingSenderId: "254805801406",
+      appId: "1:254805801406:web:98e3bd39b5af8797c9a1ef",
+      measurementId: "G-PMRFF8SZT8"
+    };
 
-	var config =
-	{
-		apiKey: "AIzaSyAKX8OCZ0NgiADg5WfzzmCFmbwsSAlVY1k",
-		authDomain: "marco-wads-exercise4.firebaseapp.com",
-		databaseURL: "https://marco-wads-exercise4.firebaseio.com",
-		projectId: "marco-wads-exercise4",
-		storageBucket: "marco-wads-exercise4.appspot.com",
-		messagingSenderId: "254805801406",
-		appId: "1:254805801406:web:98e3bd39b5af8797c9a1ef",
-		measurementId: "G-PMRFF8SZT8"
-	};
-	
+
     // Initialize Firebase
-    firebase.initializeApp(config);
-	firebase.analytics();
-	
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 
   </script>
 

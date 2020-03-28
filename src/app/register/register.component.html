@@ -1,0 +1,93 @@
+<div class="container" *ngIf="loginService.user$ | async as user; else loading">
+  <div class="row">
+    <div class="col">
+      <div class="jumbotron">
+        <h1>Hello {{user.displayName}}!</h1>
+        <p class="lead">Welcome, new member!</p>
+        <button class="btn btn-danger mr-2" (click)="loginService.signOut()">Sign Out</button><button class="btn btn-primary" [routerLink]="['/member/', this.loginService.credential.user.uid]">Go to member</button>
+      </div>
+    </div>
+  </div>
+
+<form [formGroup]="registerForm">
+  <div class="row p-3">
+    <!-- basic info card -->
+    <div class="col-md-6 p-3">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-9">
+          <div class="card bg-default animax">
+            <h5 class="card-header">
+              Basic Information
+            </h5>
+            <div class="card-body">
+
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Full Name</span>
+                </div>
+                <input type="text" id="fullName" class="form-control" placeholder="{{user.fullName}}" formControlName="fullName">
+              </div>
+
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="genderSelect">Gender</label>
+                </div>
+                <select class="custom-select" id="genderSelect" formControlName="gender">
+                  <option selected value="">- Gender -</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="-">Prefer not to say...</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select appropriate data
+                </div>
+              </div>
+
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Short Description</span>
+                </div>
+                <input type="text" class="form-control" id="shortDesc" placeholder="{{user.shortDesc}}" formControlName="shortDesc">
+              </div>
+            </div>
+            <div class="card-footer">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+    </div>
+        <div class="col-md-1">
+        </div>
+  <div class="row" >
+    <div class="col-md-4"></div>
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header">
+          <h1>All set?</h1>
+        </div>
+        <div class="card-body">
+          <button class="btn btn-success" type="submit" [disabled]="!registerForm.valid" (click)="updateData()">Submit</button>
+        </div>
+        <div class="card-footer">
+          <p class="alert-warning" *ngIf="registerForm.invalid">Please fill all required details</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+
+  </div>
+</form>
+</div>
+
+<ng-template #loading>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Initializing... Please wait</h1>
+    </div>
+  </div>
+</ng-template>

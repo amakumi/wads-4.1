@@ -1,4 +1,3 @@
-
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
@@ -17,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'My Page'`, () => {
+  it(`should have as title 'WADS 4 :: Webpage'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('My Page');
+    expect(app.title).toEqual('WADS 4 :: Webpage');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('This app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('WADS 4 :: Webpage app is running!');
   });
 });
